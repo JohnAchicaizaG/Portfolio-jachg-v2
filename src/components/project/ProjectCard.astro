@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    lang: string;
+    title: string;
+    description: string;
+    cover: string;
+    slug: string;
+    buttonLabel: string;
+}
+
+const { lang, title, description, cover, slug, buttonLabel } = Astro.props;
+---
+
+<a
+    href={`/${lang}/projects/${slug}`}
+    class="group block rounded-xl overflow-hidden shadow-lg bg-[var(--color-surface)] hover:theme-hover transition-all duration-300"
+>
+    <Image
+        src={`/src/assets/images/${cover}`}
+        alt={title}
+        class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+        width={400}
+        height={300}
+    />
+
+    <div class="p-5">
+        <h3
+            class="text-xl font-semibold theme-text mb-2 group-hover:text-[var(--color-secondary-500)] transition-colors"
+        >
+            {title}
+        </h3>
+
+        <p class="text-sm opacity-80 mb-4 line-clamp-3">{description}</p>
+
+        <div class="flex justify-end">
+            <button class="btn" aria-label={`Go to project ${title}`}>
+                {buttonLabel}
+            </button>
+        </div>
+    </div>
+</a>
+
+<style></style>

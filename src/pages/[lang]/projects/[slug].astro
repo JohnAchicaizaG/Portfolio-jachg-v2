@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import { getLangFromUrl } from "../../../i18n/utils";
+import ProjectsLayout from "../../../layouts/ProjectsLayout.astro";
+
+export async function getStaticPaths() {
+    const projects = await getCollection("projects");
+    return projects.map((project) => ({
+        params: {
+            lang: project.data.lang,
+            slug: project.data.slug,
+        },
+    }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const { slug } = Astro.params;
+
+const allProjects = await getCollection("projects");
+const project = allProjects.find(
+    (p) => p.data.lang === lang && p.data.slug === slug
+);
+
+if (!project) {
+    throw new Error("Project not found");
+}
+---
+
+<ProjectsLayout lang={lang} project={project} />

@@ -1,0 +1,34 @@
+{
+    "lang": "es",
+    "slug": "fastmeals",
+    "title": "Comidas Rápidas",
+    "description": "Una plataforma web rápida y moderna creada con Astro, diseñada para un negocio local de comidas rápidas en Colombia. Incluye autenticación con Firebase, gestión de pedidos y una interfaz totalmente optimizada con Astro Actions para funcionalidades dinámicas.",
+    "cover": "fastmeals-project/fastmeals-cover.webp",
+    "technologies": [
+        "Astro (Última versión)",
+        "Tailwind CSS",
+        "Firebase (Autenticación y Base de Datos)",
+        "Netlify (Despliegue)",
+        "Astro Actions (Funciones Serverless)"
+    ],
+    "contributions": [
+        "Desarrollé un sitio de alto rendimiento con Astro.",
+        "Implementé autenticación y gestión de usuarios con Firebase.",
+        "Integré Astro Actions para funcionalidades serverless sin problemas.",
+        "Diseñé una UI responsiva y accesible con Tailwind CSS.",
+        "Construí formularios dinámicos para interacciones y procesamiento de pedidos.",
+        "Añadí mapas embebidos para ubicación de tiendas y zonas de entrega.",
+        "Optimicé el rendimiento para tiempos de carga rápidos.",
+        "Desplegué en Netlify con CI/CD para actualizaciones automatizadas."
+    ],
+    "images": [
+        "/assets/fastmeals-project/photo-2.webp",
+        "/assets/fastmeals-project/photo-1.webp",
+        "/assets/fastmeals-project/photo-5.webp",
+        "/assets/fastmeals-project/photo-6.webp",
+        "/assets/fastmeals-project/photo-7.webp",
+        "/assets/fastmeals-project/photo-8.webp"
+    ],
+    "projectLink": "https://fastmeals.com",
+    "nameButton": "Proyecto privado"
+}

@@ -1,0 +1,44 @@
+{
+    "lang": "en",
+    "slug": "shareholders",
+    "title": "Shareholder Management System",
+    "description": "A comprehensive platform for managing shareholders, securities, and real-time voting. Includes user modules, assembly management, customizable reports, and an advanced financial system.",
+    "cover": "inventory-project/inventory-cover.webp",
+    "technologies": [
+        "Angular v.16 / Angular Material / NGRX",
+        "Tailwind CSS / CSS",
+        "Chart.js",
+        "Angular CDK (Component Dev Kit)",
+        "PDFMake",
+        "Jasmine & Karma",
+        "Spring Boot Backend / JPA / Spring Security JWT",
+        "WebSockets",
+        "PostgreSQL"
+    ],
+    "contributions": [
+        "Developed a dynamic UI using Angular 16, Angular Material, and Tailwind CSS.",
+        "Implemented real-time voting using WebSockets.",
+        "Optimized state management with NGRX.",
+        "Integrated interactive charts with Chart.js.",
+        "Built admin modules for securities and custom reports.",
+        "Generated PDF documents using PDFMake.",
+        "Secure authentication via JWT and Spring Security.",
+        "Wrote unit and integration tests using Jasmine and Karma.",
+        "Implemented a scalable backend with Spring Boot and PostgreSQL."
+    ],
+    "images": [
+        "eepb-project/eepb-1.webp",
+        "eepb-project/eepb-2.webp",
+        "eepb-project/eepb-3.webp",
+        "eepb-project/eepb-4.webp",
+        "eepb-project/eepb-5.webp",
+        "eepb-project/eepb-6.webp",
+        "eepb-project/eepb-7.webp",
+        "eepb-project/eepb-8.webp",
+        "eepb-project/eepb-9.webp",
+        "eepb-project/eepb-10.webp",
+        "eepb-project/eepb-11.webp"
+    ],
+    "projectLink": "https://eebpsa.com.co/",
+    "nameButton": "Access Intranet"
+}

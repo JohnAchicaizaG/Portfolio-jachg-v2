@@ -1,0 +1,25 @@
+{
+    "lang": "en",
+    "slug": "inventory",
+    "title": "Inventory Management System",
+    "description": "A versatile and efficient platform for managing inventories and equipment/tool loans across a wide range of industries, including retail, logistics, manufacturing, healthcare, and education.",
+    "cover": "inventory-project/inventory-1.webp",
+    "technologies": [
+        "React / Redux",
+        "HTML / CSS / TypeScript",
+        "NestJS",
+        "SEO"
+    ],
+    "contributions": [
+        "Developed reusable components using React and Redux.",
+        "Styled interfaces using CSS and TypeScript.",
+        "Enhanced SEO and performance optimizations.",
+        "Integrated REST APIs using NestJS."
+    ],
+    "images": [
+        "inventory-project/inventory-1.webp",
+        "inventory-project/inventory-2.webp"
+    ],
+    "projectLink": "https://proyecto1.com",
+    "nameButton": "View Project"
+}

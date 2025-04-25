@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* 🌙 Soporte para modo oscuro basado en clase .dark */
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+
+/* 🎨 PALETA DE COLORES DEFINIDA POR TEMA */
+@theme {
+  /* Modo claro */
+  --color-primary-500: #536D88;      /* Azul-gris elegante para botones/enlaces */
+  --color-primary-600: #2F455C;      /* Versión más oscura para hover */
+  --color-secondary-500: #B49B85;    /* Beige sobrio para detalles */
+  --color-background: #ffffff;       /* Fondo principal */
+  --color-surface: #F9F9F9;          /* Cards, secciones internas */
+  --color-text: #1A1A1A;             /* Texto principal */
+  --color-accent: #EAC195;           /* Detalles sutiles como badges o links */
+  --color-border: #E0E0E0;           /* Líneas divisorias */
+  --color-hover: rgba(83, 109, 136, 0.08); /* Hover translúcido */
+}
+
+.dark {
+  /* Modo oscuro */
+  --color-primary-500: #19274E;
+  --color-primary-600: #0F132E;
+  --color-secondary-500: #B49B85;
+  --color-background: #0F132E;
+  --color-surface: #19274E;
+  --color-text: #EAC195;
+  --color-accent: #536D88;
+  --color-border: #536D88;
+  --color-hover: rgba(234, 193, 149, 0.1);
+}
+
+
+
+
+/* 🧱 ESTILOS BASE PARA TODO EL BODY */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+
+
+
+/* 🧩 UTILIDADES PERSONALIZADAS (con @utility) */
+
+/* 🎯 Texto que hereda del sistema de colores */
+@utility theme-text {
+  color: var(--color-text);
+}
+
+/* 🎯 Fondo general adaptable al tema */
+@utility theme-bg {
+  background-color: var(--color-background);
+}
+
+/* 🎯 Fondo de tarjetas o superficies internas */
+@utility theme-surface {
+  background-color: var(--color-surface);
+}
+
+
+
+
+/* 🧬 UTILIDADES COMPUESTAS */
+
+/* 🌞 Modo claro */
+@utility light-theme {
+  @apply theme-bg theme-text;
+}
+
+/* 🌚 Modo oscuro */
+@utility dark-theme {
+  @apply theme-bg theme-text;
+}
+
+/* 🖱️ EFECTOS INTERACTIVOS */
+
+/* 🎯 Hover visual adaptado al sistema */
+@utility theme-hover {
+  @apply scale-105 text-[var(--color-secondary-500)] cursor-pointer  duration-300 ease-in-out;
+}
+
+
+
+
+/* 📐 UTILIDADES DE DISEÑO POR COMPONENTE */
+
+/* 🔲 Sección de pantalla completa con padding responsive */
+/* 📐 Sección completa de página, ocupa pantalla completa y aplica tema */
+@utility section-full {
+  @apply rounded-2xl light-theme dark:dark-theme bg-[var(--color-surface)] text-[var(--color-text)] min-h-screen flex items-center  mb-16 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 transition-colors duration-300;
+}

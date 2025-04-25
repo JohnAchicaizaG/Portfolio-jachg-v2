@@ -1,0 +1,25 @@
+{
+    "lang": "es",
+    "slug": "inventory",
+    "title": "Sistema de Gestión de Inventarios",
+    "description": "Una plataforma versátil y eficiente para gestionar inventarios y préstamos de equipos o herramientas en una amplia gama de industrias, incluyendo retail, logística, manufactura, salud y educación.",
+    "cover": "inventory-project/inventory-1.webp",
+    "technologies": [
+        "React / Redux",
+        "HTML / CSS / TypeScript",
+        "NestJS",
+        "SEO"
+    ],
+    "contributions": [
+        "Desarrollo de componentes reutilizables con React y Redux.",
+        "Implementación de estilos con CSS y TypeScript.",
+        "Optimización de SEO y rendimiento.",
+        "Integración con API REST usando NestJS."
+    ],
+    "images": [
+        "inventory-project/inventory-1.webp",
+        "inventory-project/inventory-2.webp"
+    ],
+    "projectLink": "https://proyecto1.com",
+    "nameButton": "Ver Proyecto"
+}

@@ -1,0 +1,30 @@
+---
+const { lang, title, description } = Astro.props;
+---
+
+<html lang={lang}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title} | Portafolio</title>
+        <meta name="description" content={description} />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- SEO / Open Graph -->
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content={lang} />
+        <meta property="og:image" content="/favicon.svg" />
+        <meta
+            property="og:url"
+            content={`https://tusitio.com/${lang}/projects`}
+        />
+
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    </head>
+
+    <body class="theme-bg theme-text font-sans min-h-screen">
+        <slot />
+    </body>
+</html>

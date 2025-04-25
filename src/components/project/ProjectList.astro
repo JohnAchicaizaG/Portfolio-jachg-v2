@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import { getLangFromUrl } from "../../i18n/utils";
+import type { CollectionEntry } from "astro:content";
+import ProjectCard from "./ProjectCard.astro";
+
+const lang = Astro.props.lang;
+const projects = (await getCollection("projects")).filter(
+    (p: CollectionEntry<"projects">) => p.data.lang === lang
+);
+
+console.log("💻🔥 11, ProjectList.astro: ", projects);
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+    {
+        projects.map((project) => (
+            <ProjectCard
+                lang={lang}
+                slug={project.data.slug}
+                title={project.data.title}
+                description={project.data.description}
+                cover={project.data.cover}
+                buttonLabel={project.data.nameButton ?? "Ver más"}
+            />
+        ))
+    }
+</div>

@@ -1,0 +1,42 @@
+{
+    "lang": "es",
+    "slug": "sirenagest",
+    "title": "SirenaGest",
+    "description": "SIRENAGEST fase 3 es el Sistema de Registro Nacional de Gestantes del Ministerio de Salud de Colombia. Permite un seguimiento personalizado de gestantes, incluidas migrantes, para reducir la mortalidad materna.",
+    "cover": "sirenagest-project/sirenagest-cover.webp",
+    "technologies": [
+        "Vue 3 / Element Plus / Pinia",
+        "HTML / CSS",
+        "Vue Router / Lazy Loading / Axios",
+        "Vue Test Utils",
+        ".Net Backend / ADO.NET / Microservicios",
+        "SQL Server"
+    ],
+    "contributions": [
+        "Maquetación avanzada con HTML y CSS puro, asegurando accesibilidad y estructura semántica.",
+        "Desarrollo de pantallas interactivas en Vue 3 con Vue Router.",
+        "Implementación de Lazy Loading para optimizar el rendimiento.",
+        "Creación de una tabla dinámica altamente personalizada utilizando CSS Grid.",
+        "Implementación de formularios complejos con validaciones avanzadas.",
+        "Desarrollo de interceptores con Axios para la gestión centralizada de peticiones HTTP.",
+        "Protección de rutas y gestión de autenticación dentro de la aplicación.",
+        "Consumo de APIs y manejo eficiente de respuestas en frontend.",
+        "Diseño y desarrollo de Responsive Design adaptado a múltiples dispositivos (sin Mobile First).",
+        "Adecuación de funcionalidades y migración de estado de Vuex a Pinia.",
+        "Resolución de bugs heredados de fases anteriores del proyecto.",
+        "Implementación de procedimientos almacenados en SQL Server para optimizar consultas de base de datos.",
+        "Participación activa en la recolección de requerimientos con el equipo funcional.",
+        "Reuniones semanales con stakeholders para validar avances y ajustar funcionalidades."
+    ],
+    "images": [
+        "sirenagest-project/sirenagest-1.webp",
+        "sirenagest-project/sirenagest-2.webp",
+        "sirenagest-project/sirenagest-3.webp",
+        "sirenagest-project/sirenagest-4.webp",
+        "sirenagest-project/sirenagest-5.webp",
+        "sirenagest-project/sirenagest-6.webp",
+        "sirenagest-project/sirenagest-7.webp"
+    ],
+    "projectLink": "https://web.sispropreprod.gov.co/cohortegestantes/frontend/",
+    "nameButton": "Visitar Sitio"
+}
