@@ -3,7 +3,7 @@
     "slug": "shareholders",
     "title": "Shareholder Management System",
     "description": "A comprehensive platform for managing shareholders, securities, and real-time voting. Includes user modules, assembly management, customizable reports, and an advanced financial system.",
-    "cover": "inventory-project/inventory-cover.webp",
+    "cover": "eepb-project/eepb-cover.webp",
     "technologies": [
         "Angular v.16 / Angular Material / NGRX",
         "Tailwind CSS / CSS",
@@ -14,6 +14,10 @@
         "Spring Boot Backend / JPA / Spring Security JWT",
         "WebSockets",
         "PostgreSQL"
+    ],
+    "icon": [
+        "angular-min",
+        "springboot-min"
     ],
     "contributions": [
         "Developed a dynamic UI using Angular 16, Angular Material, and Tailwind CSS.",

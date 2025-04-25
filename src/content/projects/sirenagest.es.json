@@ -12,6 +12,10 @@
         ".Net Backend / ADO.NET / Microservicios",
         "SQL Server"
     ],
+    "icon": [
+        "vue-min",
+        "net-min"
+    ],
     "contributions": [
         "Maquetación avanzada con HTML y CSS puro, asegurando accesibilidad y estructura semántica.",
         "Desarrollo de pantallas interactivas en Vue 3 con Vue Router.",

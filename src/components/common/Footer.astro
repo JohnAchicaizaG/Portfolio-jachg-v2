@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import githubIcon from "../../assets/icons/githubwhite-min.svg";
+import linkedinIcon from "../../assets/icons/linkedin-min.svg";
+---
+
+<footer class="w-full bg-black/76 text-gray-400 py-8 mt-20">
+    <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6"
+    >
+        <!-- Texto -->
+        <div class="text-2xl md:text-base text-center md:text-left">
+            <p class="text-xl">
+                © {new Date().getFullYear()} — Made with John chicaiza
+            </p>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="flex space-x-6 justify-center">
+            <a
+                href="https://github.com/tuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                class="hover:text-white transition"
+            >
+                <Image
+                    src={githubIcon}
+                    alt="GitHub"
+                    width={50}
+                    height={50}
+                    class="w-12 h-12"
+                />
+            </a>
+
+            <a
+                href="https://linkedin.com/in/tuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="hover:text-white transition"
+            >
+                <Image
+                    src={linkedinIcon}
+                    alt="LinkedIn"
+                    width={50}
+                    height={50}
+                    class="w-12 h-12"
+                />
+            </a>
+        </div>
+    </div>
+</footer>

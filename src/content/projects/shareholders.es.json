@@ -3,7 +3,7 @@
     "slug": "shareholders",
     "title": "Sistema de Gestión de Accionistas",
     "description": "Una plataforma integral para la gestión de accionistas, títulos valores y votaciones en tiempo real. Incluye módulos de usuarios, administración de asambleas, reportes personalizados y un sistema financiero avanzado.",
-    "cover": "inventory-project/inventory-cover.webp",
+    "cover": "eepb-project/eepb-cover.webp",
     "technologies": [
         "Angular v.16 / Angular Material / NGRX",
         "Tailwind CSS / CSS",
@@ -14,6 +14,10 @@
         "Spring Boot Backend / JPA / Spring Security JWT",
         "WebSockets",
         "PostgreSQL"
+    ],
+    "icon": [
+        "angular-min",
+        "springboot-min"
     ],
     "contributions": [
         "Desarrollo de una interfaz dinámica con Angular 16, Angular Material y Tailwind CSS.",

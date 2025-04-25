@@ -11,6 +11,10 @@
         "Netlify (Deployment)",
         "Astro Actions (Serverless Functions)"
     ],
+    "icon": [
+        "astrowhite-min",
+        "firebase-min"
+    ],
     "contributions": [
         "Developed a high-performance website using Astro.",
         "Implemented user authentication and management with Firebase.",

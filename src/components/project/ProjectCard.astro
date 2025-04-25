@@ -8,9 +8,13 @@ interface Props {
     cover: string;
     slug: string;
     buttonLabel: string;
+    icon: string[]; // ✅ Arreglo de strings
 }
 
-const { lang, title, description, cover, slug, buttonLabel } = Astro.props;
+const { lang, title, description, cover, slug, buttonLabel, icon } =
+    Astro.props;
+
+console.log("💻🔥 18, ProjectCard.astro: ", icon);
 ---
 
 <a
@@ -20,27 +24,36 @@ const { lang, title, description, cover, slug, buttonLabel } = Astro.props;
     <Image
         src={`/src/assets/images/${cover}`}
         alt={title}
-        class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+        class="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-300"
         loading="lazy"
         width={400}
-        height={300}
+        height={500}
     />
 
-    <div class="p-5">
+    <div class="p-12">
         <h3
-            class="text-xl font-semibold theme-text mb-2 group-hover:text-[var(--color-secondary-500)] transition-colors"
+            class="text-2xl font-semibold theme-text mb-2 group-hover:text-[var(--color-secondary-500)] transition-colors"
         >
             {title}
         </h3>
 
-        <p class="text-sm opacity-80 mb-4 line-clamp-3">{description}</p>
+        <p class="text-xl opacity-80 mb-4 line-clamp-4">{description}</p>
+    </div>
 
-        <div class="flex justify-end">
-            <button class="btn" aria-label={`Go to project ${title}`}>
-                {buttonLabel}
-            </button>
-        </div>
+    <div class="h-20 bg-black/80 flex justify-center gap-6 items-center px-10">
+        {
+            icon &&
+                icon.length > 0 &&
+                icon.map((iconName) => (
+                    <Image
+                        src={`/src/assets/icons/${iconName}.svg`}
+                        alt={iconName}
+                        class="h-10 w-10"
+                        loading="lazy"
+                        width={40}
+                        height={40}
+                    />
+                ))
+        }
     </div>
 </a>
-
-<style></style>

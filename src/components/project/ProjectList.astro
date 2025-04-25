@@ -12,10 +12,11 @@ const projects = (await getCollection("projects")).filter(
 console.log("💻🔥 11, ProjectList.astro: ", projects);
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 h-screen">
     {
         projects.map((project) => (
             <ProjectCard
+                icon={project.data.icon}
                 lang={lang}
                 slug={project.data.slug}
                 title={project.data.title}

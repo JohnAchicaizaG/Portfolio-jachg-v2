@@ -2,6 +2,11 @@
 import "../../styles/global.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import Navbar from "../../components/common/Navbar.astro";
+import HeroSection from "../../components/common/HeroSection.astro";
+import ProjectList from "../../components/project/ProjectList.astro";
+import ChallengeList from "../../components/challenge/ChallengeList.astro";
+import Footer from "../../components/common/Footer.astro";
 
 export function getStaticPaths() {
     return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
@@ -11,4 +16,17 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<BaseLayout lang={lang} t={t} />
+<BaseLayout lang={lang} t={t}>
+    <div
+        class="flex flex-col min-h-screen px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32"
+    >
+        <Navbar lang={lang} t={t} />
+        <div class="py-10 space-y-20 mt-2">
+            <HeroSection lang={lang} t={t} />
+            <ProjectList lang={lang} t={t} />
+            <ChallengeList lang={lang} t={t} />
+        </div>
+
+        <Footer lang={lang} t={t} />
+    </div>
+</BaseLayout>

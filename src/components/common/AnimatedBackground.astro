@@ -1,0 +1,96 @@
+---
+// src/components/common/AnimatedBackground.astro
+import { Image } from "astro:assets";
+
+interface Props {
+    icons: ImageMetadata[];
+}
+
+const { icons } = Astro.props;
+
+type Position = { top: number; left: number };
+
+// 🔹 Posiciones fijas para asegurar íconos en bordes y centro
+const fixedPositions: Position[] = [
+    { top: 7, left: 50 }, // top center
+    { top: 44, left: 3 }, // left center
+    { top: 95, left: 50 }, // bottom center
+    { top: 50, left: 99 }, // right center
+    { top: 10, left: 10 }, // top-left
+    { top: 11, left: 80 }, // top-right
+    { top: 92, left: 1 }, // bottom-left
+    { top: 90, left: 88 }, // bottom-right
+    { top: 50, left: 50 }, // center
+];
+
+// 🔹 Generar posiciones aleatorias para completar
+function generateRandomPositions(count: number): Position[] {
+    const positions: Position[] = [];
+    while (positions.length < count) {
+        const top = 15 + Math.random() * 70;
+        const left = 10 + Math.random() * 80;
+
+        const tooClose = positions.some((p) => {
+            const dx = p.left - left;
+            const dy = p.top - top;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            return distance < 15;
+        });
+
+        if (!tooClose) {
+            positions.push({ top, left });
+        }
+    }
+    return positions;
+}
+
+// 🔹 Mezclar los íconos aleatoriamente (algoritmo Fisher-Yates)
+function shuffle<T>(array: T[]): T[] {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+// 🔹 Prepara datos
+const remaining = icons.length - fixedPositions.length;
+const allPositions = [...fixedPositions, ...generateRandomPositions(remaining)];
+const shuffledIcons = shuffle(icons); // 👈 Ahora iconos aleatorios en posiciones
+---
+
+<div
+    class="fixed inset-0 -z-10 pointer-events-none overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-800"
+>
+    {
+        shuffledIcons.map((icon, index) => (
+            <Image
+                src={icon}
+                alt="Animated icon"
+                width={80}
+                height={60}
+                loading="lazy"
+                class="absolute opacity-17 hover:opacity-80 transition duration-500 animate-float"
+                style={`top: ${allPositions[index].top}vh; left: ${allPositions[index].left}vw;`}
+            />
+        ))
+    }
+</div>
+
+<style>
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-12px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .animate-float {
+        animation: float 10s ease-in-out infinite;
+    }
+</style>

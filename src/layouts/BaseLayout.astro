@@ -1,10 +1,38 @@
 ---
-import Navbar from "../components/common/Navbar.astro";
-import HeroSection from "../components/common/HeroSection.astro";
-import ProjectList from "../components/project/ProjectList.astro";
-import ChallengeList from "../components/challenge/ChallengeList.astro";
-import Footer from "../components/common/Footer.astro";
+import iconAngular from "../assets/icons/angular-min.svg";
+import iconAstro from "../assets/icons/astro-min.svg";
+import iconNest from "../assets/icons/nest-min.svg";
+import iconTailwind from "../assets/icons/net-min.svg";
+import iconNodefrom from "../assets/icons/nodejs-min.svg";
+import iconPostgres from "../assets/icons/postgresql-min.svg";
+import iconReact from "../assets/icons/react-min.svg";
+import iconSpring from "../assets/icons/springboot-min.svg";
+import iconSql from "../assets/icons/sql-server-min.svg";
+import iconVue from "../assets/icons/vue-min.svg";
+import iconGit from "../assets/icons/git-min.svg";
+import iconHtml from "../assets/icons/html-min.svg";
+import iconCss from "../assets/icons/css-min.svg";
+import iconJs from "../assets/icons/js-min.svg";
+import iconTs from "../assets/icons/ts-min.svg";
+import AnimatedBackground from "../components/common/AnimatedBackground.astro";
 
+const icons = [
+    iconNest,
+    iconTs,
+    iconAngular,
+    iconAstro,
+    iconHtml,
+    iconCss,
+    iconJs,
+    iconTailwind,
+    iconNodefrom,
+    iconPostgres,
+    iconReact,
+    iconSpring,
+    iconSql,
+    iconVue,
+    iconGit,
+];
 const { lang, t } = Astro.props;
 ---
 
@@ -38,23 +66,10 @@ const { lang, t } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{t("head.title")}</title>
     </head>
-    <body
-        class="font-sans text-gray-900 bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300"
-    >
-        <Navbar lang={lang} t={t} />
-        <main class="px-40 py-16">
-            <section id="hero" class="section-full">
-                <HeroSection lang={lang} t={t} />
-            </section>
+    <body class="relative min-h-screen">
+        <!-- Fondo animado con SVGs -->
+        <AnimatedBackground icons={icons} />
 
-            <section id="projects" class="section-full">
-                <ProjectList lang={lang} />
-            </section>
-
-            <section id="challenges" class="section-full">
-                <ChallengeList lang={lang} />
-            </section>
-        </main>
-        <Footer lang={lang} t={t} />
+        <slot />
     </body>
 </html>
