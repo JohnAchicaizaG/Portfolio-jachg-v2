@@ -1,0 +1,14 @@
+---
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+if (typeof window !== "undefined") {
+    AOS.init({
+        duration: 1200, // Duración de animaciones
+        once: true, // Animar una sola vez
+        offset: 100, // Cuánto antes empieza la animación al hacer scroll
+    });
+}
+---
+
+<!-- No renderiza nada visible -->

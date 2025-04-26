@@ -15,6 +15,7 @@ import iconCss from "../assets/icons/css-min.svg";
 import iconJs from "../assets/icons/js-min.svg";
 import iconTs from "../assets/icons/ts-min.svg";
 import AnimatedBackground from "../components/common/AnimatedBackground.astro";
+import "aos/dist/aos.css";
 
 const icons = [
     iconNest,
@@ -49,7 +50,6 @@ const { lang, t } = Astro.props;
                 document.documentElement.classList.remove("dark");
             }
         </script>
-
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -64,6 +64,7 @@ const { lang, t } = Astro.props;
         <meta property="og:locale" content={lang} />
         <meta property="og:url" content="https://tusitio.com" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
         <title>{t("head.title")}</title>
     </head>
     <body class="relative min-h-screen">
@@ -71,5 +72,10 @@ const { lang, t } = Astro.props;
         <AnimatedBackground icons={icons} />
 
         <slot />
+
+        <script>
+            import AOS from "aos";
+            AOS.init();
+        </script>
     </body>
 </html>
