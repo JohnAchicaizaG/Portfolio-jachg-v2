@@ -9,6 +9,11 @@ export function setThemeMode(mode: 'light' | 'dark') {
         root.classList.remove('dark');
         localStorage.setItem('theme', 'light');
     }
+
+
+    // 🚀 Lanzar evento personalizado al cambiar tema
+    const event = new Event('theme-changed');
+    window.dispatchEvent(event);
 }
 
 export function toggleTheme() {

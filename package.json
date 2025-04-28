@@ -12,9 +12,11 @@
     "@tailwindcss/vite": "^4.1.4",
     "aos": "^2.3.4",
     "astro": "^5.7.5",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "three": "^0.176.0"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7"
+    "@types/aos": "^3.0.7",
+    "@types/three": "^0.176.0"
   }
 }
