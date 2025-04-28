@@ -3,7 +3,7 @@
     "slug": "inventory",
     "title": "Sistema de Gestión de Inventarios",
     "description": "Una plataforma versátil y eficiente para gestionar inventarios y préstamos de equipos o herramientas en una amplia gama de industrias, incluyendo retail, logística, manufactura, salud y educación.",
-    "cover": "inventory-project/inventory-cover.webp",
+    "cover": "inventory-cover",
     "technologies": [
         "React / Redux",
         "HTML / CSS / TypeScript",
@@ -11,8 +11,8 @@
         "SEO"
     ],
     "icon": [
-        "react-min",
-        "nest-min"
+        "react",
+        "nest"
     ],
     "contributions": [
         "Desarrollo de componentes reutilizables con React y Redux.",

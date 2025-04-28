@@ -2,60 +2,108 @@
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import menuIcon from "../../assets/icons/menu-min.svg";
 import { Image } from "astro:assets";
+import { iconRegistry } from "../../assets/data/iconRegistry"; // ✅ Importa los íconos de idiomas
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <nav
-    class="sticky top-2 z-50 w-full backdrop-blur bg-[var(--color-surface)]/70 dark:bg-[var(--color-surface)]/70 shadow py-4"
+    data-aos="fade-down"
+    data-aos-duration="2000"
+    class="sticky top-2 text-theme z-50 w-full backdrop-blur bg-[var(--color-surface)]/70 dark:bg-[var(--color-surface)]/70 shadow py-4 px-2"
 >
-    <div class="flex px-4 sm:px-8 md:px-12">
-        <div
-            class="hidden sm:flex items-center gap-8 text-sm sm:text-base xl:text-lg w-full"
-        >
-            <a href="#projects" class="hover:theme-hover theme-text font-medium"
+    <div class="flex px-4 sm:px-8 md:px-12 items-center justify-between">
+        <div class="hidden sm:flex items-center text-theme space-x-7">
+            <a
+                href="#projects"
+                class="hover:theme-hover text-theme font-medium hover:bg-[var(--color-hover)] hover:font-bold p-1 b rounded-md px-4"
                 >{t("nav.projects")}</a
             >
-            <a href="#about" class="hover:theme-hover theme-text font-medium"
+            <a
+                href="#about"
+                class="hover:theme-hover text-theme font-medium hover:bg-[var(--color-hover)] hover:font-bold p-1 rounded-md px-4"
                 >{t("nav.about")}</a
             >
             <a
                 href="#challenges"
-                class="hover:theme-hover theme-text font-medium"
+                class="hover:theme-hover text-theme font-medium hover:bg-[var(--color-hover)] hover:font-bold p-1 rounded-md px-4"
                 >{t("nav.challenges")}</a
             >
         </div>
 
-        <div class="flex justify-end w-full">
-            <!-- Botón Tema + Selector Idioma -->
-            <div class="flex justify-end">
+        <div class="flex items-center space-x-4">
+            <!-- Botón Tema -->
+            <button
+                id="theme-toggle"
+                class="bg-[var(--color-surface)]/70 text-theme px-3 py-1.5 rounded-md hover:bg-[var(--color-hover)] transition flex items-center justify-center"
+                aria-label="Toggle theme"
+            >
+                <Image
+                    src={iconRegistry["mode-theme"]}
+                    alt="Toggle Theme"
+                    width={24}
+                    height={24}
+                    loading="lazy"
+                    class="w-6 h-6"
+                />
+            </button>
+
+            <!-- Selector de Idioma Personalizado -->
+            <div class="relative">
                 <button
-                    id="theme-toggle"
-                    class="bg-[var(--color-surface)]/70 theme-text px-3 py-1.5 rounded-md hover:bg-[var(--color-hover)] transition"
-                    aria-label="Toggle theme"
+                    id="lang-toggle"
+                    class="flex items-center gap-2 bg-[var(--color-surface)]/70 text-theme px-3 py-1.5 rounded-md hover:bg-[var(--color-hover)] transition cursor-pointer text-sm"
+                    aria-label="Toggle language menu"
                 >
-                    🌓
+                    <Image
+                        src={iconRegistry[lang]}
+                        alt={lang}
+                        width={24}
+                        height={24}
+                        loading="lazy"
+                        class="w-6 h-6"
+                    />
+                    {lang.toUpperCase()}
                 </button>
 
-                <select
-                    onchange="location.href = this.value"
-                    class="bg-[var(--color-surface)]/70 theme-text px-3 py-1.5 rounded-md hover:bg-[var(--color-hover)] transition cursor-pointer text-sm"
-                    aria-label="Select language"
+                <div
+                    id="lang-menu"
+                    class="hidden absolute right-0 mt-2 w-40 bg-[var(--color-surface)] rounded-md shadow-lg z-50"
                 >
-                    <option value="/es/" selected={lang === "es"}
-                        >🇪🇸 Español</option
+                    <a
+                        href="/es/"
+                        class="flex items-center gap-2 px-4 py-2 hover:bg-[var(--color-hover)] transition text-theme"
                     >
-                    <option value="/en/" selected={lang === "en"}
-                        >🇬🇧 English</option
+                        <Image
+                            src={iconRegistry["es"]}
+                            alt="Español"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                        />
+                        <span>Español</span>
+                    </a>
+                    <a
+                        href="/en/"
+                        class="flex items-center gap-2 px-4 py-2 hover:bg-[var(--color-hover)] transition text-theme"
                     >
-                </select>
+                        <Image
+                            src={iconRegistry["en"]}
+                            alt="English"
+                            width={24}
+                            height={24}
+                            loading="lazy"
+                        />
+                        <span>English</span>
+                    </a>
+                </div>
             </div>
-            <!-- Menú hamburguesa en móviles -->
 
-            <div class="w-full flex justify-end sm:hidden">
+            <!-- Menú hamburguesa en móviles -->
+            <div class="sm:hidden flex">
                 <button
-                    class="sm:hidden p-2"
+                    class="p-2"
                     onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
                 >
                     <Image
@@ -74,30 +122,83 @@ const t = useTranslations(lang);
     <!-- Menú desplegable mobile -->
     <div
         id="mobile-menu"
-        class="hidden sm:hidden bg-[var(--color-surface)]/90 backdrop-blur px-4 pt-4 pb-6 text-center space-y-4 shadow-lg"
+        class="hidden sm:hidden absolute top-full left-0 w-full bg-[var(--color-surface)]/90 backdrop-blur px-4 pt-4 pb-6 text-center space-y-4 shadow-lg z-50"
     >
         <a
             href="#projects"
+            onclick="document.getElementById('mobile-menu').classList.add('hidden')"
             class="block hover:theme-hover theme-text font-medium"
-            >{t("nav.projects")}</a
         >
-        <a href="#about" class="block hover:theme-hover theme-text font-medium"
-            >{t("nav.about")}</a
+            {t("nav.projects")}
+        </a>
+        <a
+            href="#about"
+            onclick="document.getElementById('mobile-menu').classList.add('hidden')"
+            class="block hover:theme-hover theme-text font-medium"
         >
+            {t("nav.about")}
+        </a>
         <a
             href="#challenges"
+            onclick="document.getElementById('mobile-menu').classList.add('hidden')"
             class="block hover:theme-hover theme-text font-medium"
-            >{t("nav.challenges")}</a
         >
+            {t("nav.challenges")}
+        </a>
     </div>
 </nav>
 
 <script is:inline>
+    // --- Tema Oscuro/Claro ---
+    function setThemeMode(mode) {
+        const root = document.documentElement;
+
+        if (mode === "dark") {
+            root.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+        } else {
+            root.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+        }
+    }
+
+    function toggleTheme() {
+        const current = localStorage.getItem("theme");
+        setThemeMode(current === "dark" ? "light" : "dark");
+    }
+
+    function initTheme() {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
+        if (saved === "dark" || (!saved && prefersDark)) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
+        initTheme();
+
         const toggleBtn = document.getElementById("theme-toggle");
-        toggleBtn?.addEventListener("click", async () => {
-            const mod = await import("/src/scripts/theme.ts");
-            mod.toggleTheme();
+        toggleBtn?.addEventListener("click", () => {
+            toggleTheme();
+        });
+
+        // --- Menú de Idioma ---
+        const langToggle = document.getElementById("lang-toggle");
+        const langMenu = document.getElementById("lang-menu");
+
+        langToggle?.addEventListener("click", (e) => {
+            e.stopPropagation();
+            langMenu.classList.toggle("hidden");
+        });
+
+        document.addEventListener("click", () => {
+            langMenu.classList.add("hidden");
         });
     });
 </script>

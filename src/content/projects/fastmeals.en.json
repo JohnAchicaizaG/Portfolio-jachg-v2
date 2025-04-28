@@ -3,7 +3,7 @@
     "slug": "fastmeals",
     "title": "Fast Meals",
     "description": "A fast and modern web platform built with Astro, designed for a local fast food business in Colombia. It includes Firebase authentication, order management, and a fully optimized interface using Astro Actions for dynamic functionalities.",
-    "cover": "fastmeals-project/fastmeals-cover.webp",
+    "cover": "fastmeals-cover",
     "technologies": [
         "Astro (Latest version)",
         "Tailwind CSS",
@@ -12,8 +12,8 @@
         "Astro Actions (Serverless Functions)"
     ],
     "icon": [
-        "astrowhite-min",
-        "firebase-min"
+        "astro-white",
+        "firebase"
     ],
     "contributions": [
         "Developed a high-performance website using Astro.",

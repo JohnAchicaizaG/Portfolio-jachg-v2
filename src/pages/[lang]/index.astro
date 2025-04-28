@@ -7,6 +7,7 @@ import HeroSection from "../../components/common/HeroSection.astro";
 import ProjectList from "../../components/project/ProjectList.astro";
 import ChallengeList from "../../components/challenge/ChallengeList.astro";
 import Footer from "../../components/common/Footer.astro";
+import Section from "../../components/common/Section.astro";
 
 export function getStaticPaths() {
     return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
@@ -23,13 +24,11 @@ const t = useTranslations(lang);
         <Navbar lang={lang} t={t} />
         <div class="py-10 space-y-20 mt-2">
             <HeroSection lang={lang} t={t} />
+            <Section />
             <ProjectList lang={lang} t={t} />
+            <Section />
             <ChallengeList lang={lang} t={t} />
         </div>
-
-        <h1 data-aos="fade-in" data-aos-delay="300">Astro</h1>
-
-        <div data-aos="fade-up">Mi contenido animado</div>
         <Footer lang={lang} t={t} />
     </div>
 </BaseLayout>

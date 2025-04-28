@@ -11,13 +11,23 @@
   /* Modo claro */
   --color-primary-500: #536D88;      /* Azul-gris elegante para botones/enlaces */
   --color-primary-600: #2F455C;      /* Versión más oscura para hover */
-  --color-secondary-500: #B49B85;    /* Beige sobrio para detalles */
+  --color-secondary-500: #19274E;    /* Beige sobrio para detalles */
   --color-background: #ffffff;       /* Fondo principal */
-  --color-surface: #F9F9F9;          /* Cards, secciones internas */
+  --color-surface: #dadada;          /* Cards, secciones internas */
   --color-text: #1A1A1A;             /* Texto principal */
   --color-accent: #EAC195;           /* Detalles sutiles como badges o links */
   --color-border: #E0E0E0;           /* Líneas divisorias */
   --color-hover: rgba(83, 109, 136, 0.08); /* Hover translúcido */
+
+
+  /* Responsive Design: */
+  --breakpoint-xs: 30rem; /* 480px */
+  --breakpoint-sm: 40rem; /* 640px */
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 64rem; /* 1024px */
+  --breakpoint-xl: 80rem; /* 1280px */
+  --breakpoint-2xl: 100rem; /* 1600px personalizado */
+  --breakpoint-3xl: 120rem; /* 1920px para pantallas 4K */
 }
 
 .dark {
@@ -64,7 +74,19 @@
 @utility theme-surface {
   background-color: var(--color-surface);
 }
+@utility custom-card {
+  @apply backdrop-blur bg-[var(--color-surface)]/50 dark:bg-[var(--color-surface)]/60 p-6  rounded-lg shadow-md h-auto;
+}
 
+
+@utility text-theme {
+  @apply  group-hover:text-[var(--color-secondary-500)] transition-colors text-xs        
+         md:text-sm    /* md: base */
+         lg:text-sm       /* lg: sm */
+         xl:text-sm       /* xl: sm */
+         2xl:text-sm      /* 2xl: xl */
+         [1600px]:text-sm; /* 3xl: 2xl personalizado */
+}
 
 
 

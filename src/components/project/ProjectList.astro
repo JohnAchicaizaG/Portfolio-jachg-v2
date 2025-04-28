@@ -8,11 +8,13 @@ const lang = Astro.props.lang;
 const projects = (await getCollection("projects")).filter(
     (p: CollectionEntry<"projects">) => p.data.lang === lang
 );
-
-console.log("💻🔥 11, ProjectList.astro: ", projects);
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12 h-screen">
+<div
+    data-aos="fade-left"
+    data-aos-duration="3000"
+    class="custom-card py-11 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 gap-10"
+>
     {
         projects.map((project) => (
             <ProjectCard

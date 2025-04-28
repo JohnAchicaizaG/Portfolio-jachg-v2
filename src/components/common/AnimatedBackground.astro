@@ -1,9 +1,10 @@
 ---
-// src/components/common/AnimatedBackground.astro
 import { Image } from "astro:assets";
+import { iconRegistry } from "../../assets/data/iconRegistry";
 
+// src/components/common/AnimatedBackground.astro
 interface Props {
-    icons: ImageMetadata[];
+    icons: string[]; // Ahora SÍ: lista de NOMBRES
 }
 
 const { icons } = Astro.props;
@@ -64,17 +65,23 @@ const shuffledIcons = shuffle(icons); // 👈 Ahora iconos aleatorios en posicio
     class="fixed inset-0 -z-10 pointer-events-none overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-800"
 >
     {
-        shuffledIcons.map((icon, index) => (
-            <Image
-                src={icon}
-                alt="Animated icon"
-                width={80}
-                height={60}
-                loading="lazy"
-                class="absolute opacity-17 hover:opacity-80 transition duration-500 animate-float"
-                style={`top: ${allPositions[index].top}vh; left: ${allPositions[index].left}vw;`}
-            />
-        ))
+        shuffledIcons.map((iconName, index) => {
+            const imageAsset = iconRegistry[iconName]; // 🔥 Buscar el asset real
+
+            if (!imageAsset) return null; // Si no existe, no renderiza nada
+
+            return (
+                <Image
+                    src={imageAsset}
+                    alt={`Icon ${iconName}`}
+                    width={80}
+                    height={60}
+                    loading="lazy"
+                    class="absolute opacity-17 hover:opacity-80 transition duration-500 animate-float"
+                    style={`top: ${allPositions[index].top}vh; left: ${allPositions[index].left}vw;`}
+                />
+            );
+        })
     }
 </div>
 

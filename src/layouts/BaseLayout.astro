@@ -1,38 +1,24 @@
 ---
-import iconAngular from "../assets/icons/angular-min.svg";
-import iconAstro from "../assets/icons/astro-min.svg";
-import iconNest from "../assets/icons/nest-min.svg";
-import iconTailwind from "../assets/icons/net-min.svg";
-import iconNodefrom from "../assets/icons/nodejs-min.svg";
-import iconPostgres from "../assets/icons/postgresql-min.svg";
-import iconReact from "../assets/icons/react-min.svg";
-import iconSpring from "../assets/icons/springboot-min.svg";
-import iconSql from "../assets/icons/sql-server-min.svg";
-import iconVue from "../assets/icons/vue-min.svg";
-import iconGit from "../assets/icons/git-min.svg";
-import iconHtml from "../assets/icons/html-min.svg";
-import iconCss from "../assets/icons/css-min.svg";
-import iconJs from "../assets/icons/js-min.svg";
-import iconTs from "../assets/icons/ts-min.svg";
 import AnimatedBackground from "../components/common/AnimatedBackground.astro";
 import "aos/dist/aos.css";
+import { iconRegistry } from "../assets/data/iconRegistry";
 
 const icons = [
-    iconNest,
-    iconTs,
-    iconAngular,
-    iconAstro,
-    iconHtml,
-    iconCss,
-    iconJs,
-    iconTailwind,
-    iconNodefrom,
-    iconPostgres,
-    iconReact,
-    iconSpring,
-    iconSql,
-    iconVue,
-    iconGit,
+    "nest",
+    "ts",
+    "angular",
+    "astro",
+    "html",
+    "css",
+    "js",
+    "tailwind",
+    "nodejs",
+    "postgres",
+    "react",
+    "springboot",
+    "sqlserver",
+    "vue",
+    "git",
 ];
 const { lang, t } = Astro.props;
 ---
@@ -67,7 +53,7 @@ const { lang, t } = Astro.props;
 
         <title>{t("head.title")}</title>
     </head>
-    <body class="relative min-h-screen">
+    <body class="relative min-h-screen scroll-smooth">
         <!-- Fondo animado con SVGs -->
         <AnimatedBackground icons={icons} />
 

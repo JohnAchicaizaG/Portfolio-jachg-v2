@@ -3,7 +3,7 @@
     "slug": "sirenagest",
     "title": "SirenaGest",
     "description": "SIRENAGEST fase 3 es el Sistema de Registro Nacional de Gestantes del Ministerio de Salud de Colombia. Permite un seguimiento personalizado de gestantes, incluidas migrantes, para reducir la mortalidad materna.",
-    "cover": "sirenagest-project/sirenagest-cover.webp",
+    "cover": "sirenagest-cover",
     "technologies": [
         "Vue 3 / Element Plus / Pinia",
         "HTML / CSS",
@@ -13,8 +13,8 @@
         "SQL Server"
     ],
     "icon": [
-        "vue-min",
-        "net-min"
+        "vue",
+        "net"
     ],
     "contributions": [
         "Maquetación avanzada con HTML y CSS puro, asegurando accesibilidad y estructura semántica.",

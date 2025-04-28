@@ -3,7 +3,7 @@
     "slug": "inventory",
     "title": "Inventory Management System",
     "description": "A versatile and efficient platform for managing inventories and equipment/tool loans across a wide range of industries, including retail, logistics, manufacturing, healthcare, and education.",
-    "cover": "inventory-project/inventory-cover.webp",
+    "cover": "inventory-cover",
     "technologies": [
         "React / Redux",
         "HTML / CSS / TypeScript",
@@ -11,8 +11,8 @@
         "SEO"
     ],
     "icon": [
-        "react-min",
-        "nest-min"
+        "react",
+        "nest"
     ],
     "contributions": [
         "Developed reusable components using React and Redux.",

@@ -3,7 +3,7 @@
     "slug": "sirenagest",
     "title": "SirenaGest",
     "description": "SIRENAGEST Phase 3 is the National Registry System for Pregnant Women from the Ministry of Health of Colombia. It enables personalized tracking of pregnant women, including migrants, to reduce maternal mortality.",
-    "cover": "sirenagest-project/sirenagest-cover.webp",
+    "cover": "sirenagest-cover",
     "technologies": [
         "Vue 3 / Element Plus / Pinia",
         "HTML / CSS",
@@ -13,8 +13,8 @@
         "SQL Server"
     ],
     "icon": [
-        "vue-min",
-        "net-min"
+        "vue",
+        "net"
     ],
     "contributions": [
         "Advanced HTML and CSS layout, ensuring accessibility and semantic structure.",
